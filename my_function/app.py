@@ -1,2 +1,2 @@
 def lambda_handler(event, context):
-    return "Hello from SAM"
+    return "Hello from CDK"
