@@ -23,8 +23,8 @@ jobs:
       - name: setup git config
         run: |
           # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
-          git config user.name "eterno-bot"
-          git config user.email "<>"
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
       - uses: actions/setup-node@v3
         with:
           node-version: 18.3.0
