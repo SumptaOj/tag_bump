@@ -1,4 +1,4 @@
-name: Git Tag Release
+name: Git  Bump & tag
 
 on:
   workflow_dispatch:
@@ -22,7 +22,6 @@ jobs:
 
       - name: setup git config
         run: |
-          # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
       - uses: actions/setup-node@v3
@@ -54,7 +53,7 @@ jobs:
 
   # git-tag:
   #   runs-on: ubuntu-latest
-  #   environment: prod
+  #   #environment: prod
   #   needs: bump
   #   steps:
   #     - name: Check out repository code
@@ -79,6 +78,7 @@ jobs:
   #         PACKAGE_VERSION=${{ steps.extract.outputs.PACKAGE_VERSION }}
   #         git tag $PACKAGE_VERSION
   #         git push origin $PACKAGE_VERSION
+
   #     - name: Create new release note
   #       run: |
   #         curl -L \
